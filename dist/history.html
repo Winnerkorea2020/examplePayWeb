@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Box Icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="./assets/css/base.css" />
+    <!-- Font CSS -->
+    <link rel="stylesheet" href="./assets/css/font.css" />
+
+    <title>Payment History</title>
+  </head>
+  <body
+    class="bg-gray-500 flex justify-center md:items-center md:h-screen text-xs font-medium"
+    style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+  >
+    <div
+      class="w-full md:h-[828px] max-w-2xl bg-gray-100 md:rounded-3xl md:shadow-lg md:shadow-gray-600"
+    >
+      <div
+        class="relative h-full basis-full pb-20 px-2 md:px-6 pt-6 rounded-lg md:rounded-3xl"
+      >
+        <header class="">
+          <div class="w-full">
+            <div class="flex items-center justify-between">
+              <h2 class="text-sm font-medium">Welcome !</h2>
+              <div class="text-xl font-bold">
+                Dear<span class="pl-1 text-blue-600">Test 123!</span>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="mt-2 border-t">
+          <div class="mt-2">
+            <span class="uppercase text-base font-semibold text-gray-900"
+              >구매내역</span
+            >
+            <!-- date Picker -->
+            <div class="flex flex-col sm:flex-row gap-2 mt-2 rounded-lg">
+              <div
+                date-rangepicker=""
+                class="basis-6/12 flex sm:flex-row items-center gap-2"
+              >
+                <div class="relative w-full xl:w-auto">
+                  <div
+                    class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"
+                  >
+                    <svg
+                      class="w-5 h-5 text-gray-50 dark:text-gray-400"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </div>
+                  <input
+                    name="start"
+                    type="text"
+                    class="bg-gray-700 text-white placeholder:text-white border border-gray-700 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2 datepicker-input"
+                    placeholder="시작일"
+                  />
+                </div>
+
+                <div class="relative w-full xl:w-auto">
+                  <div
+                    class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"
+                  >
+                    <svg
+                      class="w-5 h-5 text-gray-50 dark:text-gray-400"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </div>
+                  <input
+                    name="end"
+                    type="text"
+                    class="bg-gray-700 text-white placeholder:text-white border border-gray-700 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2 datepicker-input"
+                    placeholder="종료일"
+                  />
+                </div>
+              </div>
+              <div class="basis-1/12">
+                <div
+                  class="cursor-pointer bg-blue-700 border border-blue-700 text-xs text-gray-50 rounded-lg hover:bg-blue-400 focus:ring-blue-800 focus:border-blue-800 block w-full p-2 text-center"
+                >
+                  검색
+                </div>
+              </div>
+            </div>
+            <!-- Date Picker -->
+          </div>
+        </div>
+
+        <div class="text-gray-50 sm:mt-4 overflow-x-auto">
+          <div
+            class="flex flex-col py-6 px-2 mt-2 mb-6 sm:mb-6 relative bg-gray-900 rounded-xl overflow-x-auto"
+          >
+            <div class="basis-full overflow-x-auto bg-slate-700">
+              <div class="flex flex-col">
+                <div class="overflow-x-auto">
+                  <div class="inline-block min-w-full align-middle">
+                    <div class="overflow-hidden">
+                      <table class="table-theme-3 min-w-full">
+                        <thead class="font-normal">
+                          <tr>
+                            <th class="">Date</th>
+                            <th class="">Sales</th>
+                            <th class="">State</th>
+                            <th class="">Coin</th>
+                            <th class="">Amount</th>
+                          </tr>
+                        </thead>
+                        <tbody class="font-normal">
+                          <tr class="">
+                            <td class="">2021/12/15</td>
+                            <td class="">구매</td>
+                            <td class="">
+                              <div class="badge badge-primary w-16 px-0">
+                                취소
+                              </div>
+                            </td>
+                            <td class="">115,020,500</td>
+                            <td class="">
+                              <span class="">999,999,999,999,999,999</span>
+                              <span>KRW</span>
+                            </td>
+                          </tr>
+
+                          <tr class="">
+                            <td class="">2021/12/15</td>
+                            <td class="">구매</td>
+                            <td class="">
+                              <div class="badge badge-primary w-16 px-0">
+                                취소
+                              </div>
+                            </td>
+                            <td class="">115,020,500</td>
+                            <td class="">
+                              <span class="">999,999,999,999,999,999</span>
+                              <span>KRW</span>
+                            </td>
+                          </tr>
+
+                          <tr class="">
+                            <td class="">2021/12/15</td>
+                            <td class="">구매</td>
+                            <td class="">
+                              <div class="badge badge-primary w-16 px-0">
+                                취소
+                              </div>
+                            </td>
+                            <td class="">115,020,500</td>
+                            <td class="">
+                              <span class="">999,999,999,999,999,999</span>
+                              <span>KRW</span>
+                            </td>
+                          </tr>
+
+                          <tr class="">
+                            <td class="">2021/12/15</td>
+                            <td class="">구매</td>
+                            <td class="">
+                              <div class="">
+                                <div class="badge badge-increase w-16 px-0">
+                                  입금대기
+                                </div>
+                              </div>
+                            </td>
+                            <td class="">115,020,500</td>
+                            <td class="">
+                              <span class="">999,999,999,999,999,999</span>
+                              <span>KRW</span>
+                            </td>
+                          </tr>
+                          <tr class="">
+                            <td class="">2021/12/15</td>
+                            <td class="">구매</td>
+                            <td class="">
+                              <div class="badge badge-approve w-16 px-0">
+                                승인
+                              </div>
+                            </td>
+                            <td class="">115,020,500</td>
+                            <td class="">
+                              <span class="">999,999,999,999,999,999</span>
+                              <span>KRW</span>
+                            </td>
+                          </tr>
+                          <tr class="">
+                            <td class="">2021/12/15</td>
+                            <td class="">구매</td>
+                            <td class="">
+                              <div class="badge badge-primary w-16 px-0">
+                                취소
+                              </div>
+                            </td>
+                            <td class="">115,020,500</td>
+                            <td class="">
+                              <span class="">999,999,999,999,999,999</span>
+                              <span>KRW</span>
+                            </td>
+                          </tr>
+
+                          <tr class="">
+                            <td class="">2021/12/15</td>
+                            <td class="">구매</td>
+                            <td class="">
+                              <div class="badge badge-increase w-16 px-0">
+                                입금대기
+                              </div>
+                            </td>
+                            <td class="">115,020,500</td>
+                            <td class="">
+                              <span class="">999,999,999,999,999,999</span>
+                              <span>KRW</span>
+                            </td>
+                          </tr>
+                          <tr class="">
+                            <td class="">2021/12/15</td>
+                            <td class="">구매</td>
+                            <td class="">
+                              <div class="badge badge-approve w-16 px-0">
+                                승인
+                              </div>
+                            </td>
+                            <td class="">115,020,500</td>
+                            <td class="">
+                              <span class="">999,999,999,999,999,999</span>
+                              <span>KRW</span>
+                            </td>
+                          </tr>
+
+                          <tr class="">
+                            <td class="">2021/12/15</td>
+                            <td class="">구매</td>
+                            <td class="">
+                              <div class="badge badge-approve w-16 px-0">
+                                승인
+                              </div>
+                            </td>
+                            <td class="">115,020,500</td>
+                            <td class="">
+                              <span class="">999,999,999,999,999,999</span>
+                              <span>KRW</span>
+                            </td>
+                          </tr>
+                          <tr class="">
+                            <td class="">2021/12/15</td>
+                            <td class="">구매</td>
+                            <td class="">
+                              <div class="badge badge-approve w-16 px-0">
+                                승인
+                              </div>
+                            </td>
+                            <td class="">115,020,500</td>
+                            <td class="">
+                              <span class="">999,999,999,999,999,999</span>
+                              <span>KRW</span>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Pagination | Start -->
+            <div class="mt-3 text-xs text-right">
+              <nav aria-label="Page navigation example">
+                <ul class="inline-flex items-center -space-x-px">
+                  <li>
+                    <a
+                      href="#"
+                      class="block py-2 px-3 ml-0 leading-tight text-gray-500 rounded-l-lg"
+                    >
+                      <span class="sr-only">Previous</span>
+                      <svg
+                        class="w-5 h-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="py-2 px-3 leading-tight text-gray-500"
+                      >1</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="py-2 px-3 leading-tight text-gray-500"
+                      >2</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      aria-current="page"
+                      class="z-10 py-2 px-3 leading-tight"
+                      >3</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="py-2 px-3 leading-tight text-gray-500"
+                      >4</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="py-2 px-3 leading-tight text-gray-500"
+                      >5</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block py-2 px-3 leading-tight text-gray-500 rounded-r-lg"
+                    >
+                      <span class="sr-only">Next</span>
+                      <svg
+                        class="w-5 h-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <!-- Pagination | END -->
+          </div>
+        </div>
+
+        <!-- Bottom Navigation | Start -->
+
+        <div
+          class="absolute bottom-0 mt-5 w-full right-0 flex justify-center items-center"
+        >
+          <nav class="bg-gray-900 w-full h-full py-4 md:rounded-b-3xl">
+            <ul class="flex justify-center gap-20">
+              <li
+                class="btn-rounded btn-cancel flex justify-center items-center shadow hover:bg-red-500 hover:border-red-400 ease-out duration-150"
+              >
+                <a href="main.html">
+                  <i class="bx bx-home bx-sm"></i>
+                </a>
+              </li>
+              <li
+                class="btn-rounded btn-cancel flex justify-center items-center shadow hover:bg-red-500 hover:border-red-400 ease-out duration-150"
+              >
+                <a href="history.html" class="activity">
+                  <i class="bx bxs-category bx-sm"></i>
+                </a>
+              </li>
+              <li
+                class="btn-rounded btn-cancel flex justify-center items-center shadow hover:bg-red-500 hover:border-red-400 ease-out duration-150"
+              >
+                <a href="buy.html"
+                  ><i class="bx bxs-shopping-bag-alt bx-sm"></i
+                ></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Bottom Navigation | End -->
+      </div>
+    </div>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/datepicker.js"></script>
+  </body>
+</html>
